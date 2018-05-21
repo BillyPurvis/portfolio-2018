@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
-import './App.css';
-
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
 
+// CSS
+import './App.css';
+
+// Custom Components
+import ProjectHeader from './Scenes/Project/Components/project-header'
+import Navigation from './Components/Navigation/navigation'
 
 
 const Home = () => (
-  <div className="page-container">
-    <header>
-        <div>
-            <h1>Home</h1>         
-        </div>
-    </header>
+  <div>
+    <h1>Home</h1>
   </div>
 )
 
@@ -37,32 +37,22 @@ const Contact = () => (
   </div>
 )
 
-const Nav = () => (
-  <Router>
-      <div>
-          <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/projects">Projects</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-          </ul>
-
-          <hr/>
-
-          <Route exact path="/" component={Home}/>
-          <Route path="/projects" component={Projects}/>
-          <Route path="/blog" component={Blog}/>
-          <Route path="/contact" component={Contact}/>
-      </div>
-
-      
-  </Router>
-)
-
 class App extends Component {
   render() {
     return (
-     <Nav />
+      <div className="page-container">              
+        <Router>
+          <div className="page-body">
+            <Navigation />
+            <div className="page-container">                      
+                <Route exact path="/" component={Home}/>
+                <Route exact path="/projects" component={Projects}/>
+                <Route exact path="/blog" component={Blog}/>
+                <Route exact path="/contact" component={Contact}/>
+            </div>  
+          </div>
+        </Router>   
+      </div>      
     );
   }
 }

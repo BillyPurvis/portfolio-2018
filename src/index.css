@@ -1,5 +1,62 @@
+/*
+  Colors
+
+  primary-text: #3F3F3F;   
+  red: #D12229; 
+  background: #fff;
+  secondary-color: #F4F4F4
+*/
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|PT+Serif');
+
+html {
+  box-sizing: border-box;
+
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  padding: 45px 53px;
+  font-family: 'PT Serif', serif;
+  background: #fff;
+}
+
+/* Text Styles */
+h1 {
+  font-size: 32px;  
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 26px;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #3f3f3f;
+  font-family: 'Lato', sans-serif;
+}
+p {
+  color: #000;
+  font-size: 14px;
+  font-weight: 400; /* Regular */
+}
+
+a {
+  color: #D12229;
+  text-decoration: none;
+}
+/* Generic components */
+.divider {
+  width: 22px;
+  height: 2px;
+  background-color: #D12229;
+  display: block;  
+}
+.divider.full {
+  width: 95%;
 }
