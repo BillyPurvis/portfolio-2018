@@ -44,7 +44,7 @@ class App extends Component {
         <Router>
           <div className="page-body">
             <Navigation />
-            <div className="page-container">                      
+            <div className="page-container">                                    
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/projects" component={Projects}/>
                 <Route exact path="/blog" component={Blog}/>

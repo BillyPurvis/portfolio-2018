@@ -1,72 +1,65 @@
 import { NavLink } from 'react-router-dom'
-import { BrowserRouter } from 'react-router-dom'
-import { WithRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import React from 'react'
 
 // CSS
 import css from './navigation.css'
 
+import CloseMenuButton from './close.svg'
+import OpenMenuButton from './open.svg'
+
 // Child Component
 import NavItem from './nav-item.js'
 
-class Navigation extends React.Component {
-
-    static propTypes = {
-        match: PropTypes.object.isRequired,
-        location: PropTypes.object.isRequired,
-        history: PropTypes.object.isRequired
+/**
+* Removes slashes from path name and formats nicely
+*/
+const formatPathName = (pathname) => {               
+    if (pathname === '/') {
+        return 'Home';
     }
 
+    // Split if it's not route page
+    let splitPathname = pathname.split("/")
+    let pageName = splitPathname[1].charAt(0).toUpperCase() + splitPathname[1].slice(1)
+
+    if (pageName) {    
+        return pageName;
+    }
+    return '';
+}
+
+const CurrentRoute = withRouter(props => 
+    <span>{formatPathName(props.location.pathname)}</span>
+)
+
+
+class Navigation extends React.Component {
     constructor(props) {
        super(props)
        this.state = {
            menuActive: false,
            currentPage: this.props.location
-       }          
-       
-       console.log(this.props)
-       this.toggleMenue = this.toggleMenue.bind(this)        
-    }
-    /**
-     * Component Mounted successfully
-     */
-    componentDidUpdate() {
-        console.log(this.context)
+       }                
+       this.toggleMenue = this.toggleMenue.bind(this)            
     }
    /**
     * Inverse state to toggle menu
     */
    toggleMenue() {     
         this.setState({
-            menuActive: this.state.menuActive = !this.state.menuActive
+            menuActive: !this.state.menuActive
         })            
    }
-   /**
-    * Removes slashes from path name and formats nicely
-    */
-   setCurrentPageName() {           
-     
-    let splitPathname = window.location.pathname.split("/")
-    let pageName = splitPathname[1].charAt(0).toUpperCase() + splitPathname[1].slice(1)
-
-    if (pageName) {
-        this.setState({
-            currentPage: pageName ? pageName : 'Home'
-        })
-        return false;
-    }
-    return false;   
-   }
-
    render() {
        return (
            <div>
                <div className="nav-header">
-                    <span className="active-page">{this.state.currentPage}</span>
+                    <span className="active-page">
+                        <CurrentRoute/>
+                    </span>
                     <div className="nav-btn" onClick={this.toggleMenue}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <img src={ !this.state.menuActive ? OpenMenuButton : CloseMenuButton } />
                     </div>
                 </div>
 
