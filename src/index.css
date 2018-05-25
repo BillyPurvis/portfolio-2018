@@ -60,3 +60,35 @@ a {
 .divider.full {
   width: 95%;
 }
+
+#main-logo {
+  width: 47px;
+  height: auto;
+  position: absolute;
+}
+
+.page-content {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 155px;
+}
+.page-heading {
+  max-width: 800px;  
+}
+.page-heading h1 {  
+  font-size: 30px;
+  line-height: 48px;
+  font-weight: normal;
+  font-family: 'PT Serif', serif;
+}
+
+.grid-container {
+  display: flex;
+  width: 100%;  
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 48px;
+}
+.grid-container .grid-item {
+  width: auto;
+}
