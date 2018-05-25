@@ -11,6 +11,7 @@ import './App.css';
 // Custom Components
 import ProjectHeader from './Scenes/Project/Components/project-header'
 import Navigation from './Components/Navigation/navigation'
+import Button from './Components/Button/button'
 
 import Logo from './Components/Header/images/logo.svg'
 import PlacedImage from './Components/Home/images/placed-app.jpg'
@@ -23,17 +24,38 @@ import VueAppImage from './Components/Home/images/vue-app.jpg'
 const ProjectGrid = () => (
   <div className="grid-container">
     <div className="grid-item">
-      <img src={PlacedImage} alt="Placed App Webpage Image"/>
+      <img src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e5f7a670b5cd3ff8bbc7b21ef4e4461&auto=format&fit=crop&w=1950&q=80" alt="Placed App Webpage Image"/>
     </div>
     <div className="grid-item">
-      <img src={SugarLogImage} alt="SugarLog App Logo"/>
+    <img src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e5f7a670b5cd3ff8bbc7b21ef4e4461&auto=format&fit=crop&w=1950&q=80" alt="Placed App Webpage Image"/>
     </div>
     <div className="grid-item">
-      <img src={VueAppImage} alt="Vue App Image"/>
+    <img src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e5f7a670b5cd3ff8bbc7b21ef4e4461&auto=format&fit=crop&w=1950&q=80" alt="Placed App Webpage Image"/>
+    </div> 
+    <div className="grid-item">
+      <img src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e5f7a670b5cd3ff8bbc7b21ef4e4461&auto=format&fit=crop&w=1950&q=80" alt="Placed App Webpage Image"/>
+    </div>
+    <div className="grid-item">
+    <img src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e5f7a670b5cd3ff8bbc7b21ef4e4461&auto=format&fit=crop&w=1950&q=80" alt="Placed App Webpage Image"/>
+    </div>
+    <div className="grid-item">
+    <img src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e5f7a670b5cd3ff8bbc7b21ef4e4461&auto=format&fit=crop&w=1950&q=80" alt="Placed App Webpage Image"/>
     </div>        
-  </div>
-  
+  </div> 
 )
+
+const Article = () => (
+  <div className="content-block">
+    <h1>About Me</h1>
+    <span className="divider"></span>
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut dictum ante. Cras viverra est fermentum felis vehicula porttitor. Praesent posuere eros ut dignissim consequat. Etiam in neque condimentum, commodo urna ut, scelerisque tortor. Maecenas id neque vel dui pellentesque gravida eu eget mauris. Donec consectetur magna eget dui facilisis, eu pharetra velit laoreet. Curabitur vehicula, velit sit amet consectetur porta, ante erat tristique ligula, vel posuere ex libero id diam.
+    </p>
+  <Button>
+    I've got a project!
+    </Button>
+  </div>
+) 
 
 const Home = () => (
   <div>
@@ -42,7 +64,7 @@ const Home = () => (
 specialising in PHP,  Laravel and Symfony.</h1>
   </div>
   <ProjectGrid />
-  
+  <Article />
   </div>
 )
 
