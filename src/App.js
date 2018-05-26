@@ -16,28 +16,46 @@ import Button from './Components/Button/button'
 import Logo from './Components/Header/images/logo.svg'
 import Background from './Scenes/Home/images/bg.jpg'
 
-const ProjectGrid = () => (
-  <div className="grid-container">
-    <div className="grid-item">
-      <img src={Background} alt=""/>
-    </div>
-    <div className="grid-item">
-      <img src={Background} alt=""/>  
-    </div>
-    <div className="grid-item">
-      <img src={Background} alt=""/>  
-    </div> 
-    <div className="grid-item">
-        <img src={Background} alt=""/>  
-    </div>
-    <div className="grid-item">
-      <img src={Background} alt=""/>  
-    </div>
-    <div className="grid-item">
-      <img src={Background} alt=""/>  
-    </div>        
-  </div> 
-)
+
+class ProjectGrid extends React.Component {  
+  renderInSequence() {
+    const gridItem = document.querySelectorAll('.grid-item')
+
+    gridItem.forEach( (item, index) => {
+      setTimeout( () => {
+          item.classList.add('active')
+      }, 340 * index)
+    } )
+    //classToAdd
+  }
+  componentDidMount() {
+    this.renderInSequence()
+  }    
+  render() {
+    return (
+        <div className="grid-container">
+          <div className={`grid-item`}>
+            <img src={Background} alt=""/>
+          </div>
+          <div className={`grid-item`}>
+            <img src={Background} alt=""/>
+          </div>
+          <div className={`grid-item`}>
+            <img src={Background} alt=""/>
+          </div>
+          <div className={`grid-item`}>
+            <img src={Background} alt=""/>
+          </div>
+          <div className={`grid-item`}>
+            <img src={Background} alt=""/>
+          </div>
+          <div className={`grid-item`}>
+            <img src={Background} alt=""/>
+          </div>      
+      </div> 
+    )
+  }
+}
 
 const Article = () => (
   <div className="content-block">
@@ -65,7 +83,11 @@ specialising in PHP,  Laravel and Symfony.</h1>
 
 const Projects = () => (
   <div>
-      <h1>Projects</h1>
+      <ProjectHeader />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut dictum ante. Cras viverra est fermentum felis vehicula porttitor. Praesent posuere eros ut dignissim consequat. Etiam in neque condimentum, commodo urna ut, scelerisque tortor. Maecenas id neque vel dui pellentesque gravida eu eget mauris. Donec consectetur magna eget dui facilisis, eu pharetra velit laoreet. Curabitur vehicula, velit sit amet consectetur porta, ante erat tristique ligula, vel posuere ex libero id diam.
+      </p>
+      <ProjectGrid />
   </div>
 )
 

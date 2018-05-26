@@ -10,7 +10,8 @@ const NavItem = styled.li`
         transition: all .1s ease-out;
         color: ${Colors.primaryText};
         &.active:after {
-            left: 0;      
+            left: 0;    
+            bottom: -10px;  
             margin-top: 6px;  
             content: ' ';
             width: 22px;

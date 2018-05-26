@@ -5,7 +5,7 @@ const ProjectHeader = () => (
         <h1>Placed App</h1>
         <span className="divider"></span>
         <h2>API Development, Front End</h2>
-        <p>Software Developer</p>
+        <span className="project-role-title">Software Developer</span>
         <span className="divider"></span>
     </div>
 )

@@ -28,7 +28,6 @@ const formatPathName = (pathname) => {
     }
     return '';
 }
-
 const CurrentRoute = withRouter(props => 
     <span>{formatPathName(props.location.pathname)}</span>
 )
@@ -42,6 +41,9 @@ class Navigation extends React.Component {
            currentPage: this.props.location
        }                
        this.toggleMenue = this.toggleMenue.bind(this)            
+    }
+    greet() {
+        console.log('blue')
     }
    /**
     * Inverse state to toggle menu
@@ -64,7 +66,7 @@ class Navigation extends React.Component {
                 </div>
 
                <div id="main-nav" className= {this.state.menuActive ? 'nav-wrap active' : 'nav-wrap' }>                
-                <NavigationElement/>                
+                <NavigationElement test={this.toggleMenue}/>                
                 </div>              
         </div>
        )       
@@ -72,11 +74,20 @@ class Navigation extends React.Component {
 }
 
 
-const NavigationElement = () => (
-    <nav>
+
+class NavigationElement extends React.Component {
+    constructor(props) {
+        super(props)             
+    }
+    g = () => {
+        this.props.test()
+    }
+    render() {
+        return (
+    <nav>    
         <ul>
             <NavItem> 
-                <NavLink exact to="/" activeClassName="active">Home</NavLink>
+                <NavLink exact to="/" activeClassName="active" onClick={this.g}>Home</NavLink>
             </NavItem>
             <NavItem > 
                 <NavLink to="/projects" activeClassName="active" >Projects</NavLink>
@@ -90,4 +101,6 @@ const NavigationElement = () => (
         </ul>
     </nav>
 )
+    }
+} 
 export default Navigation
