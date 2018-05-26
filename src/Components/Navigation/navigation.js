@@ -66,7 +66,7 @@ class Navigation extends React.Component {
                 </div>
 
                <div id="main-nav" className= {this.state.menuActive ? 'nav-wrap active' : 'nav-wrap' }>                
-                <NavigationElement test={this.toggleMenue}/>                
+                <NavigationElement toggleMenu={this.toggleMenue}/>                
                 </div>              
         </div>
        )       
@@ -79,24 +79,24 @@ class NavigationElement extends React.Component {
     constructor(props) {
         super(props)             
     }
-    g = () => {
-        this.props.test()
+    toggleMenu = () => {
+        this.props.toggleMenu()
     }
     render() {
         return (
     <nav>    
         <ul>
             <NavItem> 
-                <NavLink exact to="/" activeClassName="active" onClick={this.g}>Home</NavLink>
+                <NavLink exact to="/" activeClassName="active" onClick={this.toggleMenu}>Home</NavLink>
             </NavItem>
             <NavItem > 
-                <NavLink to="/projects" activeClassName="active" >Projects</NavLink>
+                <NavLink to="/projects" activeClassName="active" onClick={this.toggleMenu}>Projects</NavLink>
             </NavItem>
             <NavItem> 
-                <NavLink to="/blog" activeClassName="active" >Blog</NavLink>
+                <NavLink to="/blog" activeClassName="active" onClick={this.toggleMenu}>Blog</NavLink>
             </NavItem>
             <NavItem> 
-                <NavLink to="/contact" activeClassName="active" >Contact</NavLink>
+                <NavLink to="/contact" activeClassName="active" onClick={this.toggleMenu}>Contact</NavLink>
             </NavItem>                                    
         </ul>
     </nav>
