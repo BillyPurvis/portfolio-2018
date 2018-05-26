@@ -14,32 +14,27 @@ import Navigation from './Components/Navigation/navigation'
 import Button from './Components/Button/button'
 
 import Logo from './Components/Header/images/logo.svg'
-import PlacedImage from './Components/Home/images/placed-app.jpg'
-import SugarLogImage from './Components/Home/images/sugar-log-app.jpg'
-import VueAppImage from './Components/Home/images/vue-app.jpg'
-
-
-
+import Background from './Scenes/Home/images/bg.jpg'
 
 const ProjectGrid = () => (
   <div className="grid-container">
     <div className="grid-item">
-      <img src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e5f7a670b5cd3ff8bbc7b21ef4e4461&auto=format&fit=crop&w=1950&q=80" alt="Placed App Webpage Image"/>
+      <img src={Background} alt=""/>
     </div>
     <div className="grid-item">
-    <img src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e5f7a670b5cd3ff8bbc7b21ef4e4461&auto=format&fit=crop&w=1950&q=80" alt="Placed App Webpage Image"/>
+      <img src={Background} alt=""/>  
     </div>
     <div className="grid-item">
-    <img src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e5f7a670b5cd3ff8bbc7b21ef4e4461&auto=format&fit=crop&w=1950&q=80" alt="Placed App Webpage Image"/>
+      <img src={Background} alt=""/>  
     </div> 
     <div className="grid-item">
-      <img src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e5f7a670b5cd3ff8bbc7b21ef4e4461&auto=format&fit=crop&w=1950&q=80" alt="Placed App Webpage Image"/>
+        <img src={Background} alt=""/>  
     </div>
     <div className="grid-item">
-    <img src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e5f7a670b5cd3ff8bbc7b21ef4e4461&auto=format&fit=crop&w=1950&q=80" alt="Placed App Webpage Image"/>
+      <img src={Background} alt=""/>  
     </div>
     <div className="grid-item">
-    <img src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e5f7a670b5cd3ff8bbc7b21ef4e4461&auto=format&fit=crop&w=1950&q=80" alt="Placed App Webpage Image"/>
+      <img src={Background} alt=""/>  
     </div>        
   </div> 
 )
