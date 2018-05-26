@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 import React from 'react'
 
 // CSS
-import css from './navigation.css'
+import './navigation.css'
 
 import CloseMenuButton from './close.svg'
 import OpenMenuButton from './open.svg'
@@ -28,11 +28,16 @@ const formatPathName = (pathname) => {
     }
     return '';
 }
+
+/**
+ * Current Route for header menu
+ */
 const CurrentRoute = withRouter(props => 
     <span>{formatPathName(props.location.pathname)}</span>
 )
-
-
+/**
+ * Navigation Parent Sidebar
+ */
 class Navigation extends React.Component {
     constructor(props) {
        super(props)
@@ -41,9 +46,6 @@ class Navigation extends React.Component {
            currentPage: this.props.location
        }                
        this.toggleMenue = this.toggleMenue.bind(this)            
-    }
-    greet() {
-        console.log('blue')
     }
    /**
     * Inverse state to toggle menu
@@ -61,7 +63,7 @@ class Navigation extends React.Component {
                         <CurrentRoute/>
                     </span>
                     <div className="nav-btn" onClick={this.toggleMenue}>
-                        <img src={ !this.state.menuActive ? OpenMenuButton : CloseMenuButton } />
+                        <img src={ !this.state.menuActive ? OpenMenuButton : CloseMenuButton } alt="Menu Icon"/>
                     </div>
                 </div>
 
@@ -72,13 +74,10 @@ class Navigation extends React.Component {
        )       
    }
 }
-
-
-
-class NavigationElement extends React.Component {
-    constructor(props) {
-        super(props)             
-    }
+/**
+ * Navigation Links 
+ */
+class NavigationElement extends React.Component {    
     toggleMenu = () => {
         this.props.toggleMenu()
     }
