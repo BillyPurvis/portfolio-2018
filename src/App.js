@@ -23,7 +23,7 @@ class ProjectGrid extends React.Component {
     gridItem.forEach( (item, index) => {
       setTimeout( () => {
           item.classList.add('active')
-      }, 340 * index)
+      }, 320 * index)
     } )
     //classToAdd
   }
