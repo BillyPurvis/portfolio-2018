@@ -58,7 +58,7 @@ class Navigation extends React.Component {
    render() {
        return (
            <div>
-               <div className="nav-header">
+               <div className={`nav-header ${this.state.menuActive ? 'fixed' : null }`}>
                     <span className="active-page">
                         <CurrentRoute/>
                     </span>

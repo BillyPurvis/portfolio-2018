@@ -10,6 +10,9 @@
 /* Import Fonts */
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|PT+Serif');
 
+.fixed {
+  position: fixed !important;
+}
 html {
   height: 100%;
   padding: 10px;
@@ -68,6 +71,7 @@ a {
 }
 
 #main-logo {
+  top: 45px;
   width: 47px;
   height: auto;
   position: absolute;
