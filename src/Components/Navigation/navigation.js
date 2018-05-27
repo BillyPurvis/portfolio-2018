@@ -42,8 +42,7 @@ class Navigation extends React.Component {
     constructor(props) {
        super(props)
        this.state = {
-           menuActive: false,
-           currentPage: this.props.location
+           menuActive: false           
        }                
        this.toggleMenue = this.toggleMenue.bind(this)            
     }
