@@ -33,9 +33,8 @@ class ProjectGrid extends React.Component {
     gridItem.forEach( (item, index) => {
       setTimeout( () => {
           item.classList.add('active')
-      }, 320 * index)
+      }, 125 * index)
     } )
-    //classToAdd
   }
   componentDidMount() {
     this.renderInSequence()
@@ -67,7 +66,7 @@ class ProjectGrid extends React.Component {
             </div>
 
           <div className={`grid-item`}>
-          <Link to="/projects/hivehub-app">
+          <Link to="/projects/sugarlog-app">
           <div style={{
                 backgroundImage: `url(${SugarlogImage})`,
                 backgroundSize: 'cover',
@@ -87,7 +86,7 @@ class ProjectGrid extends React.Component {
             </Link>
           </div>
           <div className={`grid-item`}>
-            <Link to="/projects/placed-app">
+            <Link to="/projects/hivehub-app">
                <div style={{
                 backgroundImage: `url(${HiveHuvAppImage})`,
                 backgroundSize: 'cover',
@@ -120,7 +119,6 @@ const sendEmail = (e) => {
   window.location = 'mailto:purvisbilly@outlook.com?subject=Website%20Enquiry'
   return false;  
 }
-// TODO: Move to component files
 /**
  * Article Component
  */
@@ -129,8 +127,14 @@ const Article = () => (
     <h1>About Me</h1>
     <span className="divider"></span>
     <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut dictum ante. Cras viverra est fermentum felis vehicula porttitor. Praesent posuere eros ut dignissim consequat. Etiam in neque condimentum, commodo urna ut, scelerisque tortor. Maecenas id neque vel dui pellentesque gravida eu eget mauris. Donec consectetur magna eget dui facilisis, eu pharetra velit laoreet. Curabitur vehicula, velit sit amet consectetur porta, ante erat tristique ligula, vel posuere ex libero id diam.
+    London based Software Developer with over 3 year experience in developement. Currently I'm working in <strong>Go</strong> building low latency, scalable REST API connecting to various third party
+    integrations managing huge amounts of data - something I absolutly love doing. I'm well versed in multiple languages, frameworks and tools. Most notably Go, PHP, Laravel, Symfony, MySQL and Javascript. 
+    
     </p>
+    <p>
+      Along with languages I've used, I've implemented custom GIT strategies for businesses and integrated Jenkins into teams and at times, reducing deployment speeds by 97%! I've also written about 
+      it <a target="_blank" href="https://medium.com/@billypurvis/how-jenkins-reduced-our-deployment-time-by-97-3510040a69d0">here</a>!
+      </p>      
     <Button href="#" onClick={sendEmail}>
     I've got a project!
     </Button>
@@ -150,10 +154,7 @@ specialising in PHP,  Laravel and Symfony.</h1>
 
 const Projects = () => (
   <div className="content-block full">
-    <h1>Projects</h1>    
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut dictum ante. Cras viverra est fermentum felis vehicula porttitor. Praesent posuere eros ut dignissim consequat. Etiam in neque condimentum, commodo urna ut, scelerisque tortor. Maecenas id neque vel dui pellentesque gravida eu eget mauris. Donec consectetur magna eget dui facilisis, eu pharetra velit laoreet. Curabitur vehicula, velit sit amet consectetur porta, ante erat tristique ligula, vel posuere ex libero id diam.
-    </p>
+    <h1>Projects</h1>        
     <ProjectGrid />
   </div>
 )
@@ -170,9 +171,20 @@ const ProjectPlaced = () => (
 
 const ProjectHiveHub = () => (
   <div>
-      <ProjectHeader title="HiveHub App"/>
+      <ProjectHeader title="HiveHub App" roleTitle="Go Developer, Founder"/>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut dictum ante. Cras viverra est fermentum felis vehicula porttitor. Praesent posuere eros ut dignissim consequat. Etiam in neque condimentum, commodo urna ut, scelerisque tortor. Maecenas id neque vel dui pellentesque gravida eu eget mauris. Donec consectetur magna eget dui facilisis, eu pharetra velit laoreet. Curabitur vehicula, velit sit amet consectetur porta, ante erat tristique ligula, vel posuere ex libero id diam.
+        HiveHub is a side project of mine that aims to make monitoring and tracking Bee Hives easier than ever. With the ability to record a hive's temprement, location, size, colony status and record super by super, frame by frame. It gives
+        Bee Keepers even more control of their hives on the fly. No more paper notes, Excel sheets or remembering. Just open HiveHub, record the status and you're on your way. 
+      </p>
+      <p>
+        HiveHub also automatically records the last time you saw a hive and reminds you when to check them again so you'll never forget to feed again. We're also aiming to get more people into Bee Keeping, so 
+        we're creating user profiles and community chats to connect local and international Bee Keepers! We're also planning to work with approved Bee Clubs to generate courses you can read on your phone getting
+        new people into Bee Keeping!
+      </p>
+
+      <p>
+        HiveHub is built with Go and harnesses all the power of it, as well as using React Native to power both the iOS and Android App. Currently we're in the early stages, so developement
+        is moving forward, but there's no app release quite just yet! 
       </p>
       <ProjectGrid />
   </div>
@@ -182,7 +194,7 @@ const ProjectSugarLog = () => (
   <div>
       <ProjectHeader title="SugarLog App"/>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut dictum ante. Cras viverra est fermentum felis vehicula porttitor. Praesent posuere eros ut dignissim consequat. Etiam in neque condimentum, commodo urna ut, scelerisque tortor. Maecenas id neque vel dui pellentesque gravida eu eget mauris. Donec consectetur magna eget dui facilisis, eu pharetra velit laoreet. Curabitur vehicula, velit sit amet consectetur porta, ante erat tristique ligula, vel posuere ex libero id diam.
+      SugarLog aims to improve how patients log, manage and track their diabetes records, without patient paywalls. SugarLog allows users to create logs wherever they are, analyse their history with graphs, setting up schedules to remind them when to take results or medication. SugarLog also allows users to export their data to their medical team with ease, avoiding scraps of paper, awkward device exports, and forgetting to bring results; it's all done for them! 
       </p>
       <ProjectGrid />
   </div>
