@@ -18,7 +18,12 @@ import Button from './Components/Button/button'
 import Logo from './Components/Header/images/logo.svg'
 import Background from './Scenes/Home/images/bg.jpg'
 
-import PlacedAppImage from './Scenes/Home/images/placed-app.png'
+import PlacedAppImage from './Scenes/Home/images/placed-app.jpg'
+import SugarlogImage from './Scenes/Home/images/sugar-log-app.jpg'
+import JenkinsImage from './Scenes/Home/images/jenkins-icon.jpg'
+import GoAppImage from './Scenes/Home/images/go-icon.jpg'
+import HiveHuvAppImage from './Scenes/Home/images/hive-hub.jpg'
+import BashImage from './Scenes/Home/images/bash-icon.jpg'
 
 
 class ProjectGrid extends React.Component {  
@@ -38,40 +43,67 @@ class ProjectGrid extends React.Component {
   render() {
     return (
         <div className="grid-container">      
-          
-             {/* //TODO: Add Link */}
-              <div className={`grid-item`} style={{
+                    
+             <div className={`grid-item`}>
+             <Link to="/projects/hivehub-app">
+                <div style={{
                 backgroundImage: `url(${PlacedAppImage})`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center'
-              }}>
-              </div>              
-            
+              }}></div>
+              </Link>
+              </div>    
+              
+              <div className={`grid-item`}>
+                <Link to="/projects/go-app">
+                  <div style={{
+                    backgroundImage: `url(${GoAppImage})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center'
+                  }}></div>
+                </Link>
+            </div>
 
           <div className={`grid-item`}>
           <Link to="/projects/hivehub-app">
-              <img src={Background} alt=""/>
+          <div style={{
+                backgroundImage: `url(${SugarlogImage})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center'
+              }}></div>
             </Link>
-          </div>
+          </div>          
           <div className={`grid-item`}>
-            <Link to="/projects/sugarlog-app">
-              <img src={Background} alt=""/>
+            <Link to="/projects/placed-app">
+               <div style={{
+                backgroundImage: `url(${JenkinsImage})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center'
+              }}></div>
             </Link>
           </div>
           <div className={`grid-item`}>
             <Link to="/projects/placed-app">
-              <img src={Background} alt=""/>
+               <div style={{
+                backgroundImage: `url(${HiveHuvAppImage})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center'
+              }}></div>
             </Link>
           </div>
           <div className={`grid-item`}>
             <Link to="/projects/placed-app">
-              <img src={Background} alt=""/>
-            </Link>
-          </div>
-          <div className={`grid-item`}>
-            <Link to="/projects/placed-app">
-              <img src={Background} alt=""/>
+               <div style={{
+                backgroundImage: `url(${BashImage})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center'
+              }}></div>
             </Link>
           </div>      
       </div> 

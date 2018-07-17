@@ -16,24 +16,9 @@ const Button = styled.a`
     letter-spacing: 0.5px;
     position: relative;
     overflow: hidden;
-    
-    &:before {
-        z-index: 10;
-        padding: 12px 18px;        
-        content: 'Email Me!';
-        top: 0;
-        left: -100%;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;        
-        position: absolute;  
-        text-align: center;   
-        transition: all .4s ease-out;           
-        background: ${Colors.primaryText}
-    }
-    &:hover:before {
-        left: 0;
+    transition: all .1s ease-out;
+    &:hover {
+        background: ${Colors.darkerRed}
     }
 `
 export default Button
