@@ -44,7 +44,7 @@ class ProjectGrid extends React.Component {
         <div className="grid-container">      
                     
              <div className={`grid-item`}>
-             <Link to="/projects/hivehub-app">
+             <Link to="/projects/placed-app">
                 <div style={{
                 backgroundImage: `url(${PlacedAppImage})`,
                 backgroundSize: 'cover',
@@ -76,7 +76,7 @@ class ProjectGrid extends React.Component {
             </Link>
           </div>          
           <div className={`grid-item`}>
-            <Link to="/projects/placed-app">
+            <Link to="/projects/jenkins-pipelines">
                <div style={{
                 backgroundImage: `url(${JenkinsImage})`,
                 backgroundSize: 'cover',
@@ -96,7 +96,7 @@ class ProjectGrid extends React.Component {
             </Link>
           </div>
           <div className={`grid-item`}>
-            <Link to="/projects/placed-app">
+            <Link to="/projects/bash-project">
                <div style={{
                 backgroundImage: `url(${BashImage})`,
                 backgroundSize: 'cover',
@@ -200,6 +200,36 @@ const ProjectSugarLog = () => (
   </div>
 )
 
+const ProjectGo = () => (
+  <div>
+      <ProjectHeader title="Go Microservice"/>
+      <p>
+      SugarLog aims to improve how patients log, manage and track their diabetes records, without patient paywalls. SugarLog allows users to create logs wherever they are, analyse their history with graphs, setting up schedules to remind them when to take results or medication. SugarLog also allows users to export their data to their medical team with ease, avoiding scraps of paper, awkward device exports, and forgetting to bring results; it's all done for them! 
+      </p>
+      <ProjectGrid />
+  </div>
+)
+
+const ProjectJenkins = () => (
+  <div>
+      <ProjectHeader title="Jenkins App"/>
+      <p>
+      SugarLog aims to improve how patients log, manage and track their diabetes records, without patient paywalls. SugarLog allows users to create logs wherever they are, analyse their history with graphs, setting up schedules to remind them when to take results or medication. SugarLog also allows users to export their data to their medical team with ease, avoiding scraps of paper, awkward device exports, and forgetting to bring results; it's all done for them! 
+      </p>
+      <ProjectGrid />
+  </div>
+)
+
+const ProjectBash = () => (
+  <div>
+      <ProjectHeader title="Bash Scripting For GIT"/>
+      <p>
+      SugarLog aims to improve how patients log, manage and track their diabetes records, without patient paywalls. SugarLog allows users to create logs wherever they are, analyse their history with graphs, setting up schedules to remind them when to take results or medication. SugarLog also allows users to export their data to their medical team with ease, avoiding scraps of paper, awkward device exports, and forgetting to bring results; it's all done for them! 
+      </p>
+      <ProjectGrid />
+  </div>
+)
+
 const Blog = () => (
   <div>
       <h1>Blog</h1>
@@ -236,6 +266,9 @@ class App extends Component {
                 <Route exact path="/projects/placed-app/" component={ProjectPlaced}/>
                 <Route exact path="/projects/hivehub-app/" component={ProjectHiveHub}/>
                 <Route exact path="/projects/sugarlog-app/" component={ProjectSugarLog}/>
+                <Route exact path="/projects/jenkins-pipelines/" component={ProjectJenkins}/>
+                <Route exact path="/projects/go-app/" component={ProjectGo}/>
+                <Route exact path="/projects/bash-project/" component={ProjectBash}/>
                 <Route exact path="/blog" component={Blog}/>
                 <Route exact path="/contact" component={Contact}/>
                 <Redirect to="/"/>
