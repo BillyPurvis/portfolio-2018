@@ -16,7 +16,6 @@ import Navigation from './Components/Navigation/navigation'
 import Button from './Components/Button/button'
 
 import Logo from './Components/Header/images/logo.svg'
-import Background from './Scenes/Home/images/bg.jpg'
 
 import PlacedAppImage from './Scenes/Home/images/placed-app.jpg'
 import SugarlogImage from './Scenes/Home/images/sugar-log-app.jpg'
@@ -133,7 +132,7 @@ const Article = () => (
     </p>
     <p>
       Along with languages I've used, I've implemented custom GIT strategies for businesses and integrated Jenkins into teams and at times, reducing deployment speeds by 97%! I've also written about 
-      it <a target="_blank" href="https://medium.com/@billypurvis/how-jenkins-reduced-our-deployment-time-by-97-3510040a69d0">here</a>!
+      it <a target="_blank" rel="noopener noreferrer" href="https://medium.com/@billypurvis/how-jenkins-reduced-our-deployment-time-by-97-3510040a69d0">here</a>!
       </p>      
     <Button href="#" onClick={sendEmail}>
     I've got a project!
