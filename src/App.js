@@ -142,8 +142,8 @@ const Article = () => (
 const Home = () => (
   <div>
     <div className="page-heading">
-    <h1>Hey, my name is Billy. I'm a Full Stack developer in London
-specialising in PHP,  Laravel and Symfony.</h1>
+    <h1>Hey, my name is Billy. I'm a Software Developer in London
+writing Go, PHP, Laravel and Symfony.</h1>
   </div>
     <ProjectGrid />
     <Article />
@@ -292,13 +292,14 @@ const Blog = () => (
 )
 
 const Contact = () => (
-  <div className="content-block full">
+  <div className="content-block">
     <h1>Contact</h1>    
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut dictum ante. Cras viverra est fermentum felis vehicula porttitor. Praesent posuere eros ut dignissim consequat. Etiam in neque condimentum, commodo urna ut, scelerisque tortor. Maecenas id neque vel dui pellentesque gravida eu eget mauris. Donec consectetur magna eget dui facilisis, eu pharetra velit laoreet. Curabitur vehicula, velit sit amet consectetur porta, ante erat tristique ligula, vel posuere ex libero id diam.
+      If you're looking for a new hire with Go experience, a good understanding of Linux environment, Jenkins experience and over 3 years software experience developing UIs, APIs, new processes and more. 
+      Send me over an email, or checkout my <a href="https://www.linkedin.com/in/billypurvis/">LinkedIn</a> and see what I've been doing! 
     </p>
     <Button href="#" onClick={sendEmail}>
-    I've got a project!
+    Say Hello!
     </Button>
   </div>
 )
@@ -324,7 +325,7 @@ class App extends Component {
                 <Route exact path="/projects/jenkins-pipelines/" component={ProjectJenkins}/>
                 <Route exact path="/projects/go-app/" component={ProjectGo}/>
                 <Route exact path="/projects/bash-project/" component={ProjectBash}/>
-                <Route exact path="/blog" component={Blog}/>
+                {/* <Route exact path="/blog" component={Blog}/> */}
                 <Route exact path="/contact" component={Contact}/>
                 <Redirect to="/"/>
             </Switch>

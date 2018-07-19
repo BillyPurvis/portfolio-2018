@@ -44,8 +44,20 @@ class Navigation extends React.Component {
        this.state = {
            menuActive: false           
        }                
-       this.toggleMenue = this.toggleMenue.bind(this)            
+       this.toggleMenue = this.toggleMenue.bind(this)           
+       this.closeMenuBody()
     }
+    /**
+     * Close menu if the body is clicked while the menu
+     * is open
+     */
+    closeMenuBody() {
+        document.body.addEventListener('click', () => {
+            if (this.state.menuActive) {
+                this.toggleMenue()
+            }
+        })
+    }    
    /**
     * Inverse state to toggle menu
     */
@@ -90,9 +102,9 @@ class NavigationElement extends React.Component {
             <NavItem > 
                 <NavLink to="/projects" activeClassName="active" onClick={this.toggleMenu}>Projects</NavLink>
             </NavItem>
-            <NavItem> 
+            {/* <NavItem> 
                 <NavLink to="/blog" activeClassName="active" onClick={this.toggleMenu}>Blog</NavLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem> 
                 <NavLink to="/contact" activeClassName="active" onClick={this.toggleMenu}>Contact</NavLink>
             </NavItem>                                    

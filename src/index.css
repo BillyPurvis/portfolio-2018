@@ -167,6 +167,13 @@ a {
     grid-template-columns: repeat(2, 1fr);
     grid-row: auto;
   }
+  .content-block {
+    width: 100%;
+  }
+  .page-heading h1 {
+    font-size: 25px;
+    line-height: 38px;
+  }
 }
 @media screen and (max-width: 550px) {
   .grid-container {
