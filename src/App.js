@@ -285,12 +285,6 @@ fi`}
   </div>
 )
 
-const Blog = () => (
-  <div>
-      <h1>Blog</h1>
-  </div>
-)
-
 const Contact = () => (
   <div className="content-block">
     <h1>Contact</h1>    
@@ -324,8 +318,7 @@ class App extends Component {
                 <Route exact path="/projects/sugarlog-app/" component={ProjectSugarLog}/>
                 <Route exact path="/projects/jenkins-pipelines/" component={ProjectJenkins}/>
                 <Route exact path="/projects/go-app/" component={ProjectGo}/>
-                <Route exact path="/projects/bash-project/" component={ProjectBash}/>
-                {/* <Route exact path="/blog" component={Blog}/> */}
+                <Route exact path="/projects/bash-project/" component={ProjectBash}/>                
                 <Route exact path="/contact" component={Contact}/>
                 <Redirect to="/"/>
             </Switch>

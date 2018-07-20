@@ -52,7 +52,9 @@ class Navigation extends React.Component {
      * is open
      */
     closeMenuBody() {
-        document.body.addEventListener('click', () => {
+        const el = document.querySelector('html')
+
+        el.addEventListener('click', () => {
             if (this.state.menuActive) {
                 this.toggleMenue()
             }
@@ -97,16 +99,13 @@ class NavigationElement extends React.Component {
     <nav>    
         <ul>
             <NavItem> 
-                <NavLink exact to="/" activeClassName="active" onClick={this.toggleMenu}>Home</NavLink>
+                <NavLink exact to="/" activeClassName="active">Home</NavLink>
             </NavItem>
             <NavItem > 
-                <NavLink to="/projects" activeClassName="active" onClick={this.toggleMenu}>Projects</NavLink>
-            </NavItem>
-            {/* <NavItem> 
-                <NavLink to="/blog" activeClassName="active" onClick={this.toggleMenu}>Blog</NavLink>
-            </NavItem> */}
+                <NavLink to="/projects" activeClassName="active">Projects</NavLink>
+            </NavItem>           
             <NavItem> 
-                <NavLink to="/contact" activeClassName="active" onClick={this.toggleMenu}>Contact</NavLink>
+                <NavLink to="/contact" activeClassName="active">Contact</NavLink>
             </NavItem>                                    
         </ul>
     </nav>
