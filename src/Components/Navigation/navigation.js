@@ -47,7 +47,7 @@ class Navigation extends React.Component {
            menuActive: false,
            apple: ''          
        }                
-       this.toggleMenue = this.toggleMenue.bind(this)           
+       this.toggleMenu = this.toggleMenu.bind(this)           
        this.closeMenuBody()       
     }
     
@@ -60,14 +60,14 @@ class Navigation extends React.Component {
 
         el.addEventListener('click', () => {
             if (this.state.menuActive) {
-                toggleMenu(this.state)
+                this.toggleMenu()
             }
         })
     }    
    /**
     * Inverse state to toggle menu
     */
-   toggleMenue() {     
+   toggleMenu() {     
         this.setState({
             menuActive: toggleMenu(this.state)
         })            
@@ -79,7 +79,7 @@ class Navigation extends React.Component {
                     <span className="active-page">
                         <CurrentRoute/>
                     </span>
-                    <div className="nav-btn" onClick={this.toggleMenue}>
+                    <div className="nav-btn" onClick={this.toggleMenu}>
                         <img src={ !this.state.menuActive ? OpenMenuButton : CloseMenuButton } alt="Menu Icon"/>
                     </div>
                 </div>

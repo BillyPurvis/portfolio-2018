@@ -171,13 +171,22 @@ a {
     width: 100%;
   }
   .page-heading h1 {
-    font-size: 25px;
+    font-size: 24px;
     line-height: 38px;
   }
 }
 @media screen and (max-width: 550px) {
   .grid-container {
     grid-template-columns: repeat(1, 1fr);
+  }
+  body {
+    padding: 45px 15px
+  }
+  #main-logo {
+    left: 53px;
+  }
+  .page-content {
+    margin-top: 100px;
   }
 }
 
