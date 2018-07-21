@@ -66,7 +66,7 @@ class Navigation extends React.Component {
    /**
     * Inverse state to toggle menu
     */
-   toggleMenu() {     
+   toggleMenu() {
         this.setState({
             menuActive: toggleMenu(this.state)
         })            

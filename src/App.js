@@ -38,6 +38,10 @@ class ProjectGrid extends React.Component {
     } )
   }
   componentDidMount() {
+
+    // Hack to jump to the top of the project page
+    window.scrollTo(0,0)
+
     this.renderInSequence()
   }    
   render() {
@@ -301,7 +305,7 @@ const Contact = () => (
 )
 
 
-class App extends Component {
+class App extends Component {  
   render() {
     return (
       <div className="page-container">              
