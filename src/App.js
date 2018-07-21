@@ -15,7 +15,7 @@ import ProjectHeader from './Scenes/Project/Components/project-header'
 import Navigation from './Components/Navigation/navigation'
 import Button from './Components/Button/button'
 
-import Logo from './Components/Header/images/logo.svg'
+import Logo from './Components/Header/images/logo.png'
 
 import PlacedAppImage from './Scenes/Home/images/placed-app.jpg'
 import SugarlogImage from './Scenes/Home/images/sugar-log-app.jpg'
@@ -28,7 +28,9 @@ import BashImage from './Scenes/Home/images/bash-icon.jpg'
 class ProjectGrid extends React.Component {  
   renderInSequence() {
     const gridItem = document.querySelectorAll('.grid-item')
-
+    /**
+     * Control fade in of projects
+     */
     gridItem.forEach( (item, index) => {
       setTimeout( () => {
           item.classList.add('active')
@@ -306,7 +308,7 @@ class App extends Component {
         <Router>
           <div className="page-body">
             <Link to="/">
-              <img id="main-logo" src={Logo} alt="Billy Purvis Logo"/>
+              <img id="main-logo" src={Logo} alt="Billy Purvis Logo"/>              
             </Link>
             <Navigation />
             <div className="page-content">         
