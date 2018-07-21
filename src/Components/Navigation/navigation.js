@@ -56,11 +56,10 @@ class Navigation extends React.Component {
      * is open
      */
     closeMenuBody() {
-        const el = document.querySelector('html')
-
-        el.addEventListener('click', () => {
-            if (this.state.menuActive) {
-                this.toggleMenu()
+        const el = document.querySelector('body')
+        el.addEventListener('click', (e) => {
+            if (e.target.id !== "primary-nav-btn" && this.state.menuActive) {                
+                this.toggleMenu()                
             }
         })
     }    
@@ -79,13 +78,13 @@ class Navigation extends React.Component {
                     <span className="active-page">
                         <CurrentRoute/>
                     </span>
-                    <div className="nav-btn" onClick={this.toggleMenu}>
-                        <img src={ !this.state.menuActive ? OpenMenuButton : CloseMenuButton } alt="Menu Icon"/>
+                    <div className="nav-btn" >
+                        <img onClick={this.toggleMenu} id="primary-nav-btn" src={ !this.state.menuActive ? OpenMenuButton : CloseMenuButton } alt="Menu Icon"/>
                     </div>
                 </div>
 
                <div id="main-nav" className= {this.state.menuActive ? 'nav-wrap active' : 'nav-wrap' }>                
-                <NavigationElement toggleMenu={toggleMenu(this.state)}/>                
+                <NavigationElement/>                
                 </div>              
         </div>
        )       
