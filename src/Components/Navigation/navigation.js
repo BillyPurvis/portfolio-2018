@@ -8,6 +8,8 @@ import './navigation.css'
 import CloseMenuButton from './close.svg'
 import OpenMenuButton from './open.svg'
 
+import { toggleMenu } from '../../Utils/state-functions'
+
 // Child Component
 import NavItem from './nav-item.js'
 
@@ -42,11 +44,13 @@ class Navigation extends React.Component {
     constructor(props) {
        super(props)
        this.state = {
-           menuActive: false           
+           menuActive: false,
+           apple: ''          
        }                
        this.toggleMenue = this.toggleMenue.bind(this)           
-       this.closeMenuBody()
+       this.closeMenuBody()       
     }
+    
     /**
      * Close menu if the body is clicked while the menu
      * is open
@@ -56,7 +60,7 @@ class Navigation extends React.Component {
 
         el.addEventListener('click', () => {
             if (this.state.menuActive) {
-                this.toggleMenue()
+                toggleMenu(this.state)
             }
         })
     }    
@@ -65,7 +69,7 @@ class Navigation extends React.Component {
     */
    toggleMenue() {     
         this.setState({
-            menuActive: !this.state.menuActive
+            menuActive: toggleMenu(this.state)
         })            
    }
    render() {
@@ -81,7 +85,7 @@ class Navigation extends React.Component {
                 </div>
 
                <div id="main-nav" className= {this.state.menuActive ? 'nav-wrap active' : 'nav-wrap' }>                
-                <NavigationElement toggleMenu={this.toggleMenue}/>                
+                <NavigationElement toggleMenu={toggleMenu(this.state)}/>                
                 </div>              
         </div>
        )       
