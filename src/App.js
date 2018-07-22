@@ -15,7 +15,7 @@ import ProjectGrid from './Scenes/Project/Components/project-grid'
 import Navigation from './Components/Navigation/navigation'
 import Button from './Components/Button/button'
 
-
+// Project Components
 import ProjectGo from './Scenes/Project/Components/projects/project-go'
 import ProjectBash from './Scenes/Project/Components/projects/project-bash'
 import ProjectPlaced from './Scenes/Project/Components/projects/project-placed'
@@ -23,7 +23,9 @@ import ProjectJenkins from './Scenes/Project/Components/projects/project-jenkins
 import ProjectHiveHub from './Scenes/Project/Components/projects/project-hivehub'
 import ProjectSugarLog from './Scenes/Project/Components/projects/project-sugarlog'
 
+// Image imports
 import Logo from './Components/Header/images/logo.png'
+
 /**
  * Opens email client or webpage to send email
  * to contact
@@ -66,6 +68,40 @@ writing Go, PHP, Laravel and Symfony.</h1>
   </div>
 )
 
+
+const ProjectRoutesComponent = () => {
+  const ProjectRoutes = [
+    {
+      path: '/projects/placed-app/',
+      component: ProjectPlaced
+    },
+    {
+      path: '/projects/hivehub-app/',
+      component: ProjectHiveHub
+    },
+    {
+      path: '/projects/go-app/',
+      component: ProjectGo
+    },
+    {
+      path: '/projects/jenkins-pipelines/',
+      component: ProjectJenkins
+    },
+    {
+      path: '/projects/bash-project/',
+      component: ProjectBash
+    },
+    {
+      path: '/projects/sugarlog-app/',
+      component: ProjectSugarLog
+    }
+  ]
+  
+  return ProjectRoutes.map( (item, index) => {                
+    return <Route key={index} exact path={item.path} component={item.component}/>    
+  })
+}
+
 const Projects = () => (
   <div className="content-block full">
     <h1>Projects</h1>        
@@ -101,12 +137,9 @@ class App extends Component {
             <Switch>                      
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/projects" component={Projects}/>
-                <Route exact path="/projects/placed-app/" component={ProjectPlaced}/>
-                <Route exact path="/projects/hivehub-app/" component={ProjectHiveHub}/>
-                <Route exact path="/projects/sugarlog-app/" component={ProjectSugarLog}/>
-                <Route exact path="/projects/jenkins-pipelines/" component={ProjectJenkins}/>
-                <Route exact path="/projects/go-app/" component={ProjectGo}/>
-                <Route exact path="/projects/bash-project/" component={ProjectBash}/>                
+                {
+                  ProjectRoutesComponent()                               
+                }
                 <Route exact path="/contact" component={Contact}/>
                 <Redirect to="/"/>
             </Switch>
