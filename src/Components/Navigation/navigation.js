@@ -20,7 +20,6 @@ const formatPathName = (pathname) => {
     if (pathname === '/') {
         return 'Home';
     }
-
     // Split if it's not route page
     let splitPathname = pathname.split("/")
     let pageName = splitPathname[1].charAt(0).toUpperCase() + splitPathname[1].slice(1)
@@ -34,8 +33,12 @@ const formatPathName = (pathname) => {
 /**
  * Current Route for header menu
  */
-const CurrentRoute = withRouter(props => 
-    <span>{formatPathName(props.location.pathname)}</span>
+const CurrentRoute = withRouter(props => {
+    let formatCurrentPath = formatPathName(props.location.pathname)
+    document.title = `Billy Purvis | ${formatCurrentPath} | Software Developer`
+
+    return <span>{formatCurrentPath}</span>    
+}
 )
 /**
  * Navigation Parent Sidebar
@@ -46,9 +49,9 @@ class Navigation extends React.Component {
        this.state = {
            menuActive: false,
            apple: ''          
-       }                
+       }                 
        this.toggleMenu = this.toggleMenu.bind(this)           
-       this.closeMenuBody()       
+       this.closeMenuBody()     
     }
     
     /**
