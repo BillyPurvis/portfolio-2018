@@ -7,6 +7,7 @@ import './navigation.css'
 
 import CloseMenuButton from './close.svg'
 import OpenMenuButton from './open.svg'
+import Logo from '../Header/images/logo.png'
 
 import { toggleMenu } from '../../Utils/state-functions'
 
@@ -48,12 +49,29 @@ class Navigation extends React.Component {
        super(props)
        this.state = {
            menuActive: false,
-           apple: ''          
+           isScroll: false      
        }                 
        this.toggleMenu = this.toggleMenu.bind(this)           
        this.closeMenuBody()     
+       this.responsiveNav()
     }
-    
+    responsiveNav() {
+        window.addEventListener('scroll', () => {
+           if (window.pageYOffset > 150) {
+               if (!this.state.isScroll) {
+                this.setState({
+                    isScroll: true
+                })
+               }
+           } else if (window.pageYOffset < 150) {
+               if (this.state.isScroll) {
+                   this.setState({
+                       isScroll: false
+                   })
+               }
+           }
+        })
+    }
     /**
      * Close menu if the body is clicked while the menu
      * is open
@@ -77,7 +95,10 @@ class Navigation extends React.Component {
    render() {
        return (
            <div>
-               <div className={`nav-header ${this.state.menuActive ? 'fixed' : null }`}>
+               <a href="/">
+               <img src={Logo} className={`mobile-logo ${this.state.isScroll ? 'scrolling' : ''}`} alt="Billy Purvis Logo"/>
+               </a>
+               <div className={`nav-header ${this.state.menuActive ? 'fixed' : '' } ${this.state.isScroll ? 'scrolling' : ''}`}>
                     <span className="active-page">
                         <CurrentRoute/>
                     </span>

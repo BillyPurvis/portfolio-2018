@@ -45,7 +45,7 @@ const Article = () => (
     <span className="divider"></span>
     <p>
     London based Software Developer with over 3 year experience in developement. Currently I'm working in <strong>Go</strong> building low latency, scalable REST API connecting to various third party
-    integrations managing huge amounts of data - something I absolutly love doing. I'm well versed in multiple languages, frameworks and tools. Most notably Go, PHP, Laravel, Symfony, MySQL and Javascript. 
+    integrations managing huge amounts of data - something I absolutely love doing. I'm well versed in multiple languages, frameworks and tools. Most notably Go, PHP, Laravel, Symfony, MySQL and Javascript. 
     </p>
     <p>
       Along with languages I've used, I've implemented custom Git strategies for businesses and integrated Jenkins into teams and at times, reducing deployment speeds by 97%! I've also written about 
