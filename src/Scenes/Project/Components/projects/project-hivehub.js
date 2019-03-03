@@ -16,7 +16,7 @@ const ProjectHiveHub = () => (
         </p>
   
         <p>
-          HiveHub is built with Go and harnesses all the power of it, as well as using React Native to power both the iOS and Android App. Currently we're in the early stages, so developement
+          HiveHub is built with Go and harnesses all the power of it, as well as using React Native to power both the iOS and Android App. Currently we're in the early stages, so development
           is moving forward, but there's no app release quite just yet! 
         </p>
         <ProjectGrid />
